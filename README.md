@@ -4,8 +4,9 @@
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
 
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+Hardware – PCs, Cyclone II , USB flasher
+## Software: 
+Quartus prime
 ## Theory
 Subtractor circuits take two binary numbers as input and subtract one binary number input from the other binary number input. Similar to adders, it gives out two outputs, difference and borrow (carry-in the case of Adder). There are two types of subtractors.
 
@@ -27,28 +28,54 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
+1. Create a project with required entities.
+2. Create a module along with respective file name.
+3. Run the respective programs for the given boolean equations.
+4. Run the module and get the respective RTL outputs.
+5. Create university program(VWF) for getting timing diagram.
+6. Give the respective inputs for timing diagram and obtain the results.
 
-
-Write the detailed procedure here 
 
 
 ## Program:
-/*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+### Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+### Half Subtracter:
+```py
+# Developed by: YUVARAJ.S
+# RegisterNumber: 22008589
+module expthree(a,b,difference,borrow);
+input a,b;
+output difference,borrow;
+assign difference = (a^b);
+assign borrow = (~a&b);
+endmodule
+```
+### Full Subtractor:
+```py
+# Developed by: YUVARAJ.S
+# RegisterNumber: 22008589
+module ex4(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference=(a^b^bin);
+assign borrow=((~a&b)|~(a^b)&bin);
+endmodule
+``` 
 
 ## Output:
-
-## Truthtable
-
-
-
-##  RTL realization
-
-
-## Timing diagram 
-
+### Half Subtractor:
+### Truthtable:
+![c](./1c.png)
+##  RTL realization:
+![a](./1.png)
+## Waveform:
+![b](./1b.png)
+### Full Subtractor:
+### Truthtable:
+![c](./2c.png)
+### RTL realization:
+![a](./2a.png)
+### Waveform:
+![b](./2b.png)
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
